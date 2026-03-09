@@ -1,0 +1,19 @@
+body {
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+padding:20px;
+}
+
+.game button {
+padding:8px;
+margin:4px;
+border-radius:8px;
+border:1px solid #888;
+cursor:pointer;
+}
+
+.game button.selected {
+background:black;
+color:white;
+}
