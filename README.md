@@ -1,12 +1,16 @@
 # NULLIST SAJANI Bracket
 
-Simple bracket prediction game.
+Turniiri ennustusmäng.
 
 ## Deploy
 
-Upload this repo to GitHub and deploy with Vercel.
+Vajuta siia, et teha oma versioon:
 
-Add environment variables:
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/martcasual/nullist-sajani-bracket)
 
-VITE_SUPABASE_URL
+## Setup
+
+Pärast deployd lisa Vercelis environment variables:
+
+VITE_SUPABASE_URL  
 VITE_SUPABASE_KEY
