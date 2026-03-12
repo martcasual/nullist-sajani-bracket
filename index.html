@@ -10,3 +10,39 @@
 <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
+.bracket{
+display:flex;
+gap:80px;
+padding:30px;
+overflow-x:auto;
+}
+
+.round{
+display:flex;
+flex-direction:column;
+gap:40px;
+position:relative;
+}
+
+.round::after{
+content:"";
+position:absolute;
+right:-40px;
+top:0;
+width:40px;
+height:100%;
+border-right:2px solid #ddd;
+}
+
+.round:last-child::after{
+display:none;
+}
+
+@media (max-width:800px){
+
+.bracket{
+gap:40px;
+padding:15px;
+}
+
+}
