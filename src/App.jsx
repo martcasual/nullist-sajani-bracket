@@ -4,24 +4,24 @@ import Leaderboard from "./components/Leaderboard"
 
 export default function App(){
 
-const [teams] = useState([
-{name:"Arsenal"},
-{name:"Barcelona"},
-{name:"Real Madrid"},
-{name:"Bayern"},
-{name:"Liverpool"},
-{name:"PSG"},
-{name:"Juventus"},
-{name:"Dortmund"},
-{name:"Chelsea"},
-{name:"Inter"},
-{name:"AC Milan"},
-{name:"Ajax"},
-{name:"Porto"},
-{name:"Benfica"},
-{name:"Napoli"},
-{name:"Atletico"}
-])
+const teams = [
+{name:"Lääts / Tomson"},
+{name:"Aatonen / Meite"},
+{name:"Tänav / Lill"},
+{name:"Koemets / Randmets"},
+{name:"Hiiemaa / Kütt"},
+{name:"Kalde / Raidma"},
+{name:"Veetõusme / Pajupuu"},
+{name:"Sosenko / Kösler"},
+{name:"Valting / Haidla"},
+{name:"Madiberg / Õunapuu"},
+{name:"Minkkinen / Leinstrep"},
+{name:"Kalle / Härma"},
+{name:"Randmets / Tiidus"},
+{name:"Haikal / Khalifa"},
+{name:"Klettenberg / Meier"},
+{name:"Loorits / Valk"}
+]
 
 const [pred,setPred]=useState({})
 const [entries,setEntries]=useState([])
