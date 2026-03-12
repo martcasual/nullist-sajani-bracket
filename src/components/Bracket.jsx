@@ -3,28 +3,24 @@ import Game from "./Game"
 export default function Bracket({ teams, pred, onPick }) {
 
 const r16 = [
-[teams[0], teams[1]],
-[teams[2], teams[3]],
-[teams[4], teams[5]],
-[teams[6], teams[7]],
-[teams[8], teams[9]],
-[teams[10], teams[11]],
-[teams[12], teams[13]],
-[teams[14], teams[15]]
+[teams[0],teams[1]],
+[teams[2],teams[3]],
+[teams[4],teams[5]],
+[teams[6],teams[7]],
+[teams[8],teams[9]],
+[teams[10],teams[11]],
+[teams[12],teams[13]],
+[teams[14],teams[15]]
 ]
 
 return (
 
-<div style={{
-display:"flex",
-gap:"60px",
-overflowX:"auto",
-padding:"20px"
-}}>
+<div className="bracket">
 
-{/* ROUND OF 16 */}
+{/* ROUND 1 */}
 
-<div>
+<div className="round">
+
 <h3>Round of 16</h3>
 
 {r16.map((g,i)=>(
@@ -40,9 +36,10 @@ onPick={(team)=>onPick("r16_"+i,team)}
 </div>
 
 
-{/* QUARTERFINAL */}
+{/* ROUND 2 */}
 
-<div>
+<div className="round">
+
 <h3>Quarterfinal</h3>
 
 {Array(4).fill().map((_,i)=>(
@@ -58,9 +55,10 @@ onPick={(team)=>onPick("qf_"+i,team)}
 </div>
 
 
-{/* SEMIFINAL */}
+{/* ROUND 3 */}
 
-<div>
+<div className="round">
+
 <h3>Semifinal</h3>
 
 {Array(2).fill().map((_,i)=>(
@@ -78,7 +76,8 @@ onPick={(team)=>onPick("sf_"+i,team)}
 
 {/* FINAL */}
 
-<div>
+<div className="round">
+
 <h3>Final</h3>
 
 <Game
@@ -90,22 +89,12 @@ onPick={(team)=>onPick("final",team)}
 
 <h2 style={{marginTop:"20px"}}>🏆 Champion</h2>
 
-<button
-style={{
-padding:"10px",
-borderRadius:"12px",
-background:"#2563eb",
-color:"white",
-border:"none",
-fontWeight:"bold",
-cursor:"pointer"
-}}
-onClick={()=>onPick("champion",pred["final"])}
->
-
-{pred["champion"] || "Select Champion"}
-
-</button>
+<Game
+team1={pred["final"]}
+team2=""
+selected={pred["champion"]}
+onPick={(team)=>onPick("champion",team)}
+/>
 
 </div>
 
@@ -113,3 +102,4 @@ onClick={()=>onPick("champion",pred["final"])}
 
 )
 }
+
