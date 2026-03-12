@@ -13,16 +13,13 @@ const r16 = [
 [teams[14], teams[15]]
 ]
 
-const qf = Array(4).fill(null)
-const sf = Array(2).fill(null)
-
 return (
 
 <div style={{
-display:"grid",
-gridTemplateColumns:"repeat(4,200px)",
-gap:"40px",
-overflowX:"auto"
+display:"flex",
+gap:"60px",
+overflowX:"auto",
+padding:"20px"
 }}>
 
 {/* ROUND OF 16 */}
@@ -43,13 +40,12 @@ onPick={(team)=>onPick("r16_"+i,team)}
 </div>
 
 
-{/* QUARTERFINALS */}
+{/* QUARTERFINAL */}
 
 <div>
 <h3>Quarterfinal</h3>
 
-{qf.map((_,i)=>(
-
+{Array(4).fill().map((_,i)=>(
 <Game
 key={i}
 team1={pred["r16_"+(i*2)]}
@@ -57,19 +53,17 @@ team2={pred["r16_"+(i*2+1)]}
 selected={pred["qf_"+i]}
 onPick={(team)=>onPick("qf_"+i,team)}
 />
-
 ))}
 
 </div>
 
 
-{/* SEMIFINALS */}
+{/* SEMIFINAL */}
 
 <div>
 <h3>Semifinal</h3>
 
-{sf.map((_,i)=>(
-
+{Array(2).fill().map((_,i)=>(
 <Game
 key={i}
 team1={pred["qf_"+(i*2)]}
@@ -77,7 +71,6 @@ team2={pred["qf_"+(i*2+1)]}
 selected={pred["sf_"+i]}
 onPick={(team)=>onPick("sf_"+i,team)}
 />
-
 ))}
 
 </div>
@@ -95,15 +88,17 @@ selected={pred["final"]}
 onPick={(team)=>onPick("final",team)}
 />
 
-<h2 style={{marginTop:"30px"}}>
-🏆 Champion
-</h2>
+<h2 style={{marginTop:"20px"}}>🏆 Champion</h2>
 
 <button
 style={{
 padding:"10px",
-borderRadius:"10px",
-fontWeight:"bold"
+borderRadius:"12px",
+background:"#2563eb",
+color:"white",
+border:"none",
+fontWeight:"bold",
+cursor:"pointer"
 }}
 onClick={()=>onPick("champion",pred["final"])}
 >
